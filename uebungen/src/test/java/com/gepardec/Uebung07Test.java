@@ -10,8 +10,7 @@ public class Uebung07Test implements RewriteTest {
 
     @Override
     public void defaults(RecipeSpec spec) {
-        // Auskommentieren, sobald das Rezept implementiert ist:
-        //spec.recipe(new Uebung07("test", "argument"));
+        spec.recipe(new Uebung07("test", "argument"));
     }
 
     @Test

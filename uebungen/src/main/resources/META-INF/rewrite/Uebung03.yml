@@ -4,6 +4,15 @@ name: com.gepardec.Uebung03
 displayName: Uebung03
 description: 3. Uebung des internen OpenRewrite Trainings.
 preconditions:
-  # Wenn jakarta.jakartaee-api und jakarta.jakartaee-core-api nicht in den Dependencies sind
+  - org.openrewrite.maven.search.DoesNotIncludeDependency:
+      groupId: jakarta.platform
+      artifactId: jakarta.jakartaee-api
+  - org.openrewrite.maven.search.DoesNotIncludeDependency:
+      groupId: jakarta.platform
+      artifactId: jakarta.jakartaee-core-api
 recipeList:
-  # Dann füge jakarta.inject:jakarta.inject-api:2.0.1 hinzu
+  - org.openrewrite.maven.AddDependency:
+      groupId: jakarta.inject
+      artifactId: jakarta.inject-api
+      version: 2.0.1
+      scope: provided

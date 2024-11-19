@@ -25,12 +25,17 @@ public class Uebung06 extends Recipe {
             @Override
             public J.MethodDeclaration visitMethodDeclaration(J.MethodDeclaration method, ExecutionContext executionContext) {
                 method = super.visitMethodDeclaration(method, executionContext);
-                // Alle Klassen herausfiltern, die nicht "Uebung06Test" heißen
+                if (!getCursor().firstEnclosingOrThrow(J.ClassDeclaration.class).getSimpleName().equals("Uebung06Test")) {
+                    return method;
+                }
 
-                // Methoden herausfiltern, die die Deprecated Annotation nicht besitzen
-
-                // Annotation entfernen
-                return method;
+                List<J.Annotation> filteredAnnotations = method.getLeadingAnnotations().stream()
+                        .filter(a -> !a.getSimpleName().equals("Deprecated"))
+                        .toList();
+                if (method.getLeadingAnnotations().size() == filteredAnnotations.size()) {
+                    return method;
+                }
+                return method.withLeadingAnnotations(filteredAnnotations);
             }
         };
     }

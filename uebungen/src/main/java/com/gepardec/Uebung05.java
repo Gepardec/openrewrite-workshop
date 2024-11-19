@@ -24,7 +24,7 @@ public class Uebung05 extends Recipe {
         return new JavaIsoVisitor<>() {
             @Override
             public J.CompilationUnit visitCompilationUnit(J.CompilationUnit cu, ExecutionContext executionContext) {
-                // LST ausgeben
+                System.out.println(TreeVisitingPrinter.printTree(getCursor()));
                 return super.visitCompilationUnit(cu, executionContext);
             }
         };
