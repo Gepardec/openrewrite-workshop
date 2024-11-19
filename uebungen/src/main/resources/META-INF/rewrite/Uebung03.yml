@@ -1,0 +1,9 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.gepardec.Uebung03
+displayName: Uebung03
+description: 3. Uebung des internen OpenRewrite Trainings.
+preconditions:
+  # Wenn jakarta.jakartaee-api und jakarta.jakartaee-core-api nicht in den Dependencies sind
+recipeList:
+  # Dann füge jakarta.inject:jakarta.inject-api:2.0.1 hinzu
