@@ -29,7 +29,7 @@ public class Uebung06 extends Recipe {
 
                 // Methoden herausfiltern, die die Deprecated Annotation nicht besitzen
 
-                // Annotation entfernen
+                // Annotation entfernen (Liste ohne Deprecated-Annotation setzen)
                 return method;
             }
         };
