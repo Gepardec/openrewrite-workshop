@@ -1,0 +1,65 @@
+diff --git a/ticket-monster/pom.xml b/ticket-monster/pom.xml
+index ce85fdc..4c02c20 100644
+--- a/ticket-monster/pom.xml
++++ b/ticket-monster/pom.xml
+@@ -69,20 +69,20 @@ org.openrewrite.java.dependencies.RelocatedDependencyCheck
+             <scope>provided</scope>
+         </dependency>
+ 
+-        <dependency>
++        <!--~~(Relocated to jakarta.inject:jakarta.inject-api)~~>--><dependency>
+             <groupId>javax.inject</groupId>
+             <artifactId>javax.inject</artifactId>
+             <scope>provided</scope>
+         </dependency>
+ 
+-        <dependency>
++        <!--~~(Relocated to jakarta.xml.bind:jakarta.xml.bind-api as per "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates")~~>--><dependency>
+             <groupId>javax.xml.bind</groupId>
+             <artifactId>jaxb-api</artifactId>
+             <version>2.3.1</version>
+             <scope>provided</scope>
+         </dependency>
+ 
+-        <dependency>
++        <!--~~(Relocated to jakarta.validation:jakarta.validation-api as per "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates")~~>--><dependency>
+             <groupId>javax.validation</groupId>
+             <artifactId>validation-api</artifactId>
+             <scope>provided</scope>
+@@ -107,7 +107,7 @@
+ 
+         <!-- Import the JPA API, we use provided scope as the API is included 
+             in JBoss EAP -->
+-        <dependency>
++        <!--~~(Relocated to org.hibernate.javax.persistence:hibernate-jpa-2.2-api)~~>--><dependency>
+             <groupId>org.hibernate.javax.persistence</groupId>
+             <artifactId>hibernate-jpa-2.1-api</artifactId>
+             <scope>provided</scope>
+@@ -132,7 +132,7 @@
+         <!-- JSR-303 (Bean Validation) Implementation -->
+         <!-- Provides portable constraints such as @Email -->
+         <!-- Hibernate Validator is shipped in JBoss EAP -->
+-        <dependency>
++        <!--~~(Relocated to org.hibernate.validator:hibernate-validator)~~>--><dependency>
+             <groupId>org.hibernate</groupId>
+             <artifactId>hibernate-validator</artifactId>
+             <scope>provided</scope>
+@@ -149,7 +149,7 @@
+ 
+         <!-- Annotation processor to generate the JPA 2.0 metamodel classes 
+             for typesafe criteria queries -->
+-        <dependency>
++        <!--~~(Relocated to org.hibernate.orm:hibernate-jpamodelgen)~~>--><dependency>
+             <groupId>org.hibernate</groupId>
+             <artifactId>hibernate-jpamodelgen</artifactId>
+             <scope>provided</scope>
+@@ -393,7 +393,7 @@
+             <build>
+                 <finalName>ROOT</finalName>
+                 <plugins>
+-                    <plugin>
++                    <!--~~(Relocated to org.eclipse.jkube:kubernetes-maven-plugin as per "This project has been rebranded to https://github.com/eclipse-jkube/jkube.")~~>--><plugin>
+                         <groupId>io.fabric8</groupId>
+                         <artifactId>fabric8-maven-plugin</artifactId>
+                         <version>3.2.28</version>
+
