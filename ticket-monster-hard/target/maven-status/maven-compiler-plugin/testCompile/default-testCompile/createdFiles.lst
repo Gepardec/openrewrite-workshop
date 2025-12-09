@@ -1,6 +1,0 @@
-org/jboss/examples/ticketmonster/test/TicketMonsterDeployment.class
-org/jboss/examples/ticketmonster/test/rest/RESTDeployment.class
-org/jboss/examples/ticketmonster/test/rest/ShowServiceTest.class
-org/jboss/examples/ticketmonster/test/rest/VenueServiceTest.class
-org/jboss/examples/ticketmonster/test/rest/BookingServiceTest.class
-org/jboss/examples/ticketmonster/test/rest/EventServiceTest.class
