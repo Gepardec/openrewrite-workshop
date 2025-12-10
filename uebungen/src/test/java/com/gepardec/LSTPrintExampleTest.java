@@ -6,11 +6,11 @@ import org.openrewrite.test.RewriteTest;
 
 import static org.openrewrite.java.Assertions.java;
 
-public class Uebung05Test implements RewriteTest {
+public class LSTPrintExampleTest implements RewriteTest {
 
     @Override
     public void defaults(RecipeSpec spec) {
-        spec.recipe(new Uebung05());
+        spec.recipe(new LSTPrintExample());
     }
 
     @Test
@@ -20,7 +20,7 @@ public class Uebung05Test implements RewriteTest {
                 java("""
                         package com.gepardec;
                         
-                        public class Uebung05Test {
+                        public class LSTPrintExampleTest {
                             @Deprecated
                             public void test(String argument) {
                                 boolean test = argument.isBlank();

@@ -6,11 +6,11 @@ import org.openrewrite.test.RewriteTest;
 
 import static org.openrewrite.java.Assertions.java;
 
-public class Uebung06Test implements RewriteTest {
+public class RecipeImplementationExampleTest implements RewriteTest {
 
     @Override
     public void defaults(RecipeSpec spec) {
-        spec.recipe(new Uebung06());
+        spec.recipe(new RecipeImplementationExample());
     }
 
     @Test
@@ -20,14 +20,14 @@ public class Uebung06Test implements RewriteTest {
                 java("""
                         package com.gepardec;
                         
-                        public class Uebung06Test {
+                        public class RecipeImplementationExampleTest {
                             @SuppressWarnings("unchecked") @Deprecated
                             public void method(String argument) {}
                         }
                         """, """
                         package com.gepardec;
                         
-                        public class Uebung06Test {
+                        public class RecipeImplementationExampleTest {
                             @SuppressWarnings("unchecked")
                             public void method(String argument) {}
                         }
@@ -37,7 +37,7 @@ public class Uebung06Test implements RewriteTest {
     }
 
     @Test
-    public void givenJava_whenClassNotUebung06Test_thenDoNothing() {
+    public void givenJava_whenClassNotRecipeImplementationExampleTest_thenDoNothing() {
         rewriteRun(
                 //language=java
                 java("""

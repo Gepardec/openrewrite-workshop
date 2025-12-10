@@ -6,11 +6,11 @@ import org.openrewrite.test.RewriteTest;
 
 import static org.openrewrite.maven.Assertions.pomXml;
 
-public class Uebung03Test implements RewriteTest {
+public class PreconditionsExampleTest implements RewriteTest {
 
     @Override
     public void defaults(RecipeSpec spec) {
-        spec.recipeFromResources("com.gepardec.Uebung03");
+        spec.recipeFromResources("com.gepardec.PreconditionsExample");
     }
 
     @Test
@@ -20,12 +20,12 @@ public class Uebung03Test implements RewriteTest {
                         """
                             <project>
                                 <groupId>com.gepardec</groupId>
-                                <artifactId>uebung03</artifactId>
+                                <artifactId>PreconditionsExample</artifactId>
                                 <version>1.0.0</version>
                             </project>""", """
                             <project>
                                 <groupId>com.gepardec</groupId>
-                                <artifactId>uebung03</artifactId>
+                                <artifactId>PreconditionsExample</artifactId>
                                 <version>1.0.0</version>
                                 <dependencies>
                                     <dependency>
@@ -46,7 +46,7 @@ public class Uebung03Test implements RewriteTest {
                         """
                             <project>
                                 <groupId>com.gepardec</groupId>
-                                <artifactId>uebung03</artifactId>
+                                <artifactId>PreconditionsExample</artifactId>
                                 <version>1.0.0</version>
                                 <dependencies>
                                     <dependency>
@@ -68,7 +68,7 @@ public class Uebung03Test implements RewriteTest {
                         """
                             <project>
                                 <groupId>com.gepardec</groupId>
-                                <artifactId>uebung03</artifactId>
+                                <artifactId>PreconditionsExample</artifactId>
                                 <version>1.0.0</version>
                                 <dependencies>
                                     <dependency>

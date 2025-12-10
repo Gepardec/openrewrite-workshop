@@ -1,8 +1,8 @@
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: com.gepardec.Uebung03
-displayName: Uebung03
-description: 3. Uebung des internen OpenRewrite Trainings.
+name: com.gepardec.PreconditionsExample
+displayName: PreconditionsExample
+description: Uebung zu Preconditions des OpenRewrite Trainings.
 preconditions:
   - org.openrewrite.maven.search.DoesNotIncludeDependency:
       groupId: jakarta.platform

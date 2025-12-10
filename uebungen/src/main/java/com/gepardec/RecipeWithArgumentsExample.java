@@ -7,7 +7,7 @@ import org.openrewrite.java.JavaTemplate;
 import org.openrewrite.java.tree.J;
 import org.openrewrite.java.tree.Statement;
 
-public class Uebung07 extends Recipe {
+public class RecipeWithArgumentsExample extends Recipe {
     @Option
     String methodName;
 
@@ -30,12 +30,12 @@ public class Uebung07 extends Recipe {
 
     @Override
     public @NlsRewrite.DisplayName String getDisplayName() {
-        return "";
+        return "RecipeWithArgumentsExample";
     }
 
     @Override
     public @NlsRewrite.Description String getDescription() {
-        return "hallo.";
+        return "Uebung zu Rezeptimplementierungen mit Argumenten des OpenRewrite Workshops.";
     }
 
     @Override

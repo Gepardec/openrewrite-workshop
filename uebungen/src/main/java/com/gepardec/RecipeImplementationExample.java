@@ -8,15 +8,15 @@ import org.openrewrite.java.tree.J;
 
 import java.util.List;
 
-public class Uebung06 extends Recipe {
+public class RecipeImplementationExample extends Recipe {
     @Override
     public String getDisplayName() {
-        return "Uebung06";
+        return "RecipeImplementationExample";
     }
 
     @Override
     public String getDescription() {
-        return "6. Uebung des internen OpenRewrite Workshops.";
+        return "Uebung zu Java-Rezeptimplementierungen des OpenRewrite Workshops.";
     }
 
     @Override
