@@ -37,4 +37,15 @@ mvn clean install
 
 Die im Workshop genutzten Slides befinden sich unter "/slides.pdf"
 
+## Weiterführende Ressourcen
+
+- [Gepardec-Rezeptsammlung](https://github.com/Gepardec/openrewrite-recipes)
+- [OpenRewrite Rezeptdokumentation](https://docs.openrewrite.org/recipes)
+- [OpenRewrite Guides](https://docs.openrewrite.org/reference/)
+- [Method-Patterns](https://docs.openrewrite.org/reference/method-patterns)
+- [Guide zum Rezepte schreiben](https://docs.openrewrite.org/authoring-recipes)
+- [Moderne CodeRemix Sammlung mit Zusammenfassungen - Videoguides von OpenRewrite-EntwicklerInnen](https://docs.moderne.io/user-documentation/community-office-hours/)
+- [Usages von Methoden in den offiziellen Rezepten suchen](https://app.moderne.io/recipes/org.openrewrite.java.search.FindMethods)
+- [OpenRewrite Slack](https://join.slack.com/t/rewriteoss/shared_invite/zt-1ihfggp2a-glIit_aXJnhHAdv_0uzwow)
+
 Alle weiteren Infos folgen im Workshop. Have fun ;)
