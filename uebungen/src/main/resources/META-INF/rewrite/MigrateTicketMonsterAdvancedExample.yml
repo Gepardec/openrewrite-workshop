@@ -1,10 +1,12 @@
+# TODO Rezeptaufruf im rewrite-maven-plugin
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.gepardec.MigrateTicketMonsterAdvancedExample
 displayName: MigrateTicketMonsterAdvancedExample
 description: Erweiterte Aufgabe, bei der ticket-monster vollständig auf Jakarta migriert werden soll.
 recipeList:
-  # TODO: Migrieren wir schon auf Jakarta?
+  - org.openrewrite.java.migrate.jakarta.JakartaEE10
+  - com.gepardec.eap8.ChangeBOMs
   - com.gepardec.eap8.MigrateDependencies
   # TODO: Irgendetwas passt mit den importierten Klassen nicht mehr
 
@@ -20,6 +22,12 @@ recipeList:
       newGroupId: org.hibernate.validator
       newArtifactId: hibernate-validator
       newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.hibernate
+      oldArtifactId: hibernate-jpamodelgen
+      newGroupId: org.hibernate.orm
+      newArtifactId: hibernate-jpamodelgen
+      newVersion: 6.6.38.Final
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.jboss.arquillian.protocol
       oldArtifactId: arquillian-protocol-servlet
@@ -41,15 +49,21 @@ recipeList:
 
 ---
 type: specs.openrewrite.org/v1beta/recipe
+name: com.gepardec.eap8.ChangeBOMs
+displayName: Migrate BOM Imports
+recipeList:
+  - org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId:
+      oldGroupId: org.wildfly.bom
+      oldArtifactId: wildfly-javaee7-with-tools
+      newGroupId: org.wildfly.bom
+      newArtifactId: wildfly-ee-with-tools
+      newVersion: latest.release
+
+---
+type: specs.openrewrite.org/v1beta/recipe
 name: com.gepardec.eap8.MigrateJBossSpecs
 displayName: Migrate additional javax.* dependencies for EAP-8
 recipeList:
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: org.jboss.spec.javax.annotation
-      oldArtifactId: jboss-annotations-api_1.3_spec
-      newGroupId: jakarta.annotation
-      newArtifactId: jakarta.annotation-api
-      newVersion: latest.release
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.jboss.spec.javax.ws.rs
       oldArtifactId: jboss-jaxrs-api_2.0_spec

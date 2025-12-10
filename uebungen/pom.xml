@@ -50,6 +50,17 @@
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-xml</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-java-dependencies</artifactId>
+            <version>1.47.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-migrate-java</artifactId>
+            <version>3.23.0</version>
+        </dependency>
     </dependencies>
 
 
