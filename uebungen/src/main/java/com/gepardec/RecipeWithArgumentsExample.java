@@ -16,7 +16,7 @@ public class RecipeWithArgumentsExample extends Recipe {
 
     transient JavaTemplate nullCheck;
 
-    public Uebung07(@JsonProperty("methodName") String methodName, @JsonProperty("argumentName") String argumentName) {
+    public RecipeWithArgumentsExample(@JsonProperty("methodName") String methodName, @JsonProperty("argumentName") String argumentName) {
         this.methodName = methodName;
         this.argumentName = argumentName;
         this.nullCheck = JavaTemplate.builder("""

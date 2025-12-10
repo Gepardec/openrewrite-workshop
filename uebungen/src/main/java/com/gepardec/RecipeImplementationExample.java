@@ -25,7 +25,7 @@ public class RecipeImplementationExample extends Recipe {
             @Override
             public J.MethodDeclaration visitMethodDeclaration(J.MethodDeclaration method, ExecutionContext executionContext) {
                 method = super.visitMethodDeclaration(method, executionContext);
-                if (!getCursor().firstEnclosingOrThrow(J.ClassDeclaration.class).getSimpleName().equals("Uebung06Test")) {
+                if (!getCursor().firstEnclosingOrThrow(J.ClassDeclaration.class).getSimpleName().equals("RecipeImplementationExampleTest")) {
                     return method;
                 }
 

@@ -4,6 +4,14 @@ name: com.gepardec.CompositeRecipeExample
 displayName: CompositeRecipeExample
 description: Uebung zu Composite Recipes des OpenRewrite Trainings.
 recipeList:
-  # Typ HelloWorldPrinter zu GepardecPrinter ändern
-  # Dependency com.ext:printer zu com.gepardec:printer:1.0.0 ändern
-  # Dependency com.gepardec:printer managen lassen
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.ext.printer.HelloWorldPrinter
+      newFullyQualifiedTypeName: com.gepardec.printer.GepardecPrinter
+  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+      oldGroupId: com.ext
+      oldArtifactId: printer
+      newGroupId: com.gepardec
+      newArtifactId: printer
+      newVersion: 1.0.0
+  - org.openrewrite.maven.ManageDependencies:
+      groupPattern: com.gepardec

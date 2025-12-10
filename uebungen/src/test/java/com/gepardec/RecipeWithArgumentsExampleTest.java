@@ -10,7 +10,7 @@ public class RecipeWithArgumentsExampleTest implements RewriteTest {
 
     @Override
     public void defaults(RecipeSpec spec) {
-        spec.recipe(new RecipeWithArgumentsExampleTest("test", "argument"));
+        spec.recipe(new RecipeWithArgumentsExample("test", "argument"));
     }
 
     @Test
