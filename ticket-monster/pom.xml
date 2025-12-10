@@ -205,7 +205,29 @@
         <finalName>${project.artifactId}</finalName>
 
         <plugins>
-            <!-- Hier rewrite-maven-plugin hinzufügen -->
+            <plugin>
+                <groupId>org.openrewrite.maven</groupId>
+                <artifactId>rewrite-maven-plugin</artifactId>
+                <version>6.25.0</version>
+                <configuration>
+                    <exportDatatables>true</exportDatatables>
+                    <activeRecipes>
+                        <recipe>com.gepardec.EAP8Upgrade</recipe>
+                    </activeRecipes>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.openrewrite.recipe</groupId>
+                        <artifactId>rewrite-java-dependencies</artifactId>
+                        <version>1.47.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.openrewrite.recipe</groupId>
+                        <artifactId>rewrite-migrate-java</artifactId>
+                        <version>3.23.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
 
     </build>
