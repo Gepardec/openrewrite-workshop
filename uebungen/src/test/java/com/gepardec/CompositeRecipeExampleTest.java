@@ -13,11 +13,11 @@ import static org.openrewrite.java.Assertions.java;
 import static org.openrewrite.maven.Assertions.pomXml;
 import static org.openrewrite.xml.Assertions.xml;
 
-public class Uebung02Test implements RewriteTest {
+public class CompositeRecipeExampleTest implements RewriteTest {
 
     @Override
     public void defaults(RecipeSpec spec) {
-        spec.recipeFromResources("com.gepardec.Uebung02")
+        spec.recipeFromResources("com.gepardec.CompositeRecipeExample")
                 .parser(JavaParser.fromJavaVersion().dependsOn(
                         """
                                 package com.ext.printer;

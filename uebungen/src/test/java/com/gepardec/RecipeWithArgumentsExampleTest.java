@@ -6,12 +6,12 @@ import org.openrewrite.test.RewriteTest;
 
 import static org.openrewrite.java.Assertions.java;
 
-public class Uebung07Test implements RewriteTest {
+public class RecipeWithArgumentsExampleTest implements RewriteTest {
 
     @Override
     public void defaults(RecipeSpec spec) {
         // Auskommentieren, sobald das Rezept implementiert ist:
-        //spec.recipe(new Uebung07("test", "argument"));
+        //spec.recipe(new RecipeWithArgumentsExample("test", "argument"));
     }
 
     @Test
@@ -21,7 +21,7 @@ public class Uebung07Test implements RewriteTest {
                 java("""
                         package com.gepardec;
                         
-                        public class Uebung07Test {
+                        public class RecipeWithArgumentsExampleTest {
                             public void test(String argument) {
                                 argument = "Input was: " + argument;
                                 System.out.println(argument);
@@ -30,7 +30,7 @@ public class Uebung07Test implements RewriteTest {
                         """, """
                         package com.gepardec;
                         
-                        public class Uebung07Test {
+                        public class RecipeWithArgumentsExampleTest {
                             public void test(String argument) {
                                 if (argument == null) {
                                     return;
@@ -51,7 +51,7 @@ public class Uebung07Test implements RewriteTest {
                 java("""
                         package com.gepardec;
                         
-                        public class Uebung07Test {
+                        public class RecipeWithArgumentsExampleTest {
                             @Deprecated
                             public void notSearched(String argument) {
                                 argument = "Input was: " + argument;
@@ -69,7 +69,7 @@ public class Uebung07Test implements RewriteTest {
                 java("""
                         package com.gepardec;
                         
-                        public class Uebung07Test {
+                        public class RecipeWithArgumentsExampleTest {
                             @Deprecated
                             public void test(String notSearched) {
                                 notSearched = "Input was: " + notSearched;

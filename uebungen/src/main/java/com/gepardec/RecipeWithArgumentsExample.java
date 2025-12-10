@@ -4,16 +4,16 @@ import org.openrewrite.*;
 import org.openrewrite.java.JavaIsoVisitor;
 import org.openrewrite.java.tree.J;
 
-public class Uebung07 extends Recipe {
+public class RecipeWithArgumentsExample extends Recipe {
 
     @Override
     public @NlsRewrite.DisplayName String getDisplayName() {
-        return "Uebung07";
+        return "RecipeWithArgumentsExample";
     }
 
     @Override
     public @NlsRewrite.Description String getDescription() {
-        return "7. Uebung des internen OpenRewrite Workshops.";
+        return "Uebung zu Rezeptimplementierungen mit Argumenten des OpenRewrite Workshops.";
     }
 
     @Override

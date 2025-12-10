@@ -6,17 +6,15 @@ import org.openrewrite.TreeVisitor;
 import org.openrewrite.java.JavaIsoVisitor;
 import org.openrewrite.java.tree.J;
 
-import java.util.List;
-
-public class Uebung06 extends Recipe {
+public class RecipeImplementationExample extends Recipe {
     @Override
     public String getDisplayName() {
-        return "Uebung06";
+        return "RecipeImplementationExample";
     }
 
     @Override
     public String getDescription() {
-        return "6. Uebung des internen OpenRewrite Workshops.";
+        return "Uebung zu Java-Rezeptimplementierungen des OpenRewrite Workshops.";
     }
 
     @Override
@@ -25,7 +23,7 @@ public class Uebung06 extends Recipe {
             @Override
             public J.MethodDeclaration visitMethodDeclaration(J.MethodDeclaration method, ExecutionContext executionContext) {
                 method = super.visitMethodDeclaration(method, executionContext);
-                // Alle Klassen herausfiltern, die nicht "Uebung06Test" heißen
+                // Alle Klassen herausfiltern, die nicht "RecipeImplementationExampleTest" heißen
 
                 // Methoden herausfiltern, die die Deprecated Annotation nicht besitzen
 
