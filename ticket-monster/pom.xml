@@ -212,7 +212,7 @@
                 <configuration>
                     <exportDatatables>true</exportDatatables>
                     <activeRecipes>
-                        <recipe>com.gepardec.EAP8Upgrade</recipe>
+                        <recipe>com.gepardec.MigrateTicketMonsterAdvancedExample</recipe>
                     </activeRecipes>
                 </configuration>
                 <dependencies>
@@ -225,6 +225,11 @@
                         <groupId>org.openrewrite.recipe</groupId>
                         <artifactId>rewrite-migrate-java</artifactId>
                         <version>3.23.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.gepardec</groupId>
+                        <artifactId>OpenRewriteWorkshopUebungen</artifactId>
+                        <version>1.0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
             </plugin>
