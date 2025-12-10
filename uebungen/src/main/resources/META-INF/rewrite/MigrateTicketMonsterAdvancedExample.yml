@@ -1,0 +1,112 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.gepardec.MigrateTicketMonsterAdvancedExample
+displayName: MigrateTicketMonsterAdvancedExample
+description: Erweiterte Aufgabe, bei der ticket-monster vollständig auf Jakarta migriert werden soll.
+recipeList:
+  - org.openrewrite.java.migrate.jakarta.JakartaEE10
+  - com.gepardec.eap8.ChangeBOMs
+  - com.gepardec.eap8.MigrateDependencies
+  - com.gepardec.eap8.FixImports
+
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.gepardec.eap8.MigrateDependencies
+displayName: Migrate additional javax.* dependencies for EAP-8
+recipeList:
+  - com.gepardec.eap8.MigrateJBossSpecs
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.hibernate
+      oldArtifactId: hibernate-validator
+      newGroupId: org.hibernate.validator
+      newArtifactId: hibernate-validator
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.hibernate
+      oldArtifactId: hibernate-jpamodelgen
+      newGroupId: org.hibernate.orm
+      newArtifactId: hibernate-jpamodelgen
+      newVersion: 6.6.38.Final
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.jboss.arquillian.protocol
+      oldArtifactId: arquillian-protocol-servlet
+      newGroupId: org.jboss.arquillian.protocol
+      newArtifactId: arquillian-protocol-servlet-jakarta
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.jboss.resteasy
+      oldArtifactId: resteasy-jaxrs
+      newGroupId: org.jboss.resteasy
+      newArtifactId: resteasy-core-spi
+      newVersion: latest.release
+  - org.openrewrite.maven.UpgradeDependencyVersion:
+      groupId: org.jboss.shrinkwrap.resolver
+      artifactId: shrinkwrap-resolver-depchain
+      newVersion: latest.release
+      overrideManagedVersion: true
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.jboss.arquillian.protocol
+      oldArtifactId: arquillian-protocol-servlet
+      newGroupId: org.jboss.arquillian.protocol
+      newArtifactId: arquillian-protocol-servlet-jakarta
+      newVersion: latest.release
+
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.gepardec.eap8.ChangeBOMs
+displayName: Migrate BOM Imports
+recipeList:
+  - org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId:
+      oldGroupId: org.wildfly.bom
+      oldArtifactId: wildfly-javaee7-with-tools
+      newGroupId: org.wildfly.bom
+      newArtifactId: wildfly-ee-with-tools
+      newVersion: latest.release
+
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.gepardec.eap8.FixImports
+displayName: Fix broken imports after migration
+recipeList:
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.hibernate.validator.constraints.Email
+      newFullyQualifiedTypeName: jakarta.validation.constraints.Email
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.hibernate.validator.constraints.NotEmpty
+      newFullyQualifiedTypeName: jakarta.validation.constraints.NotEmpty
+
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.gepardec.eap8.MigrateJBossSpecs
+displayName: Migrate additional javax.* dependencies for EAP-8
+recipeList:
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.jboss.spec.javax.ws.rs
+      oldArtifactId: jboss-jaxrs-api_2.0_spec
+      newGroupId: jakarta.ws.rs
+      newArtifactId: jakarta.ws.rs-api
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.jboss.spec.javax.ejb
+      oldArtifactId: jboss-ejb-api_3.2_spec
+      newGroupId: jakarta.ejb
+      newArtifactId: jakarta.ejb-api
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.jboss.spec.javax.servlet
+      oldArtifactId: jboss-servlet-api_3.1_spec
+      newGroupId: jakarta.servlet
+      newArtifactId: jakarta.servlet-api
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.hibernate.javax.persistence
+      oldArtifactId: hibernate-jpa-2.1-api
+      newGroupId: jakarta.persistence
+      newArtifactId: jakarta.persistence-api
+      newVersion: 3.2.0
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.jboss.spec.javax.annotation
+      oldArtifactId: jboss-annotations-api_1.2_spec
+      newGroupId: jakarta.annotation
+      newArtifactId: jakarta.annotation-api
+      newVersion: latest.release
