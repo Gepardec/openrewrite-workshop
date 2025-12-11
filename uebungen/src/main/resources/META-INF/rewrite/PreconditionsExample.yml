@@ -7,3 +7,4 @@ preconditions:
   # Wenn jakarta.jakartaee-api und jakarta.jakartaee-core-api nicht in den Dependencies sind
 recipeList:
   # Dann füge jakarta.inject:jakarta.inject-api:2.0.1 hinzu
+  - org.openrewrite.java.OrderImports # Temporär; Lösche es bei der Übung
