@@ -6,6 +6,11 @@ import org.openrewrite.test.RewriteTest;
 
 import static org.openrewrite.java.Assertions.java;
 
+/**
+ * Von allen Methoden der Klasse RecipeImplementationExampleTest, lösche
+ * @Deprecated Annotationen
+ */
+
 public class RecipeImplementationExampleTest implements RewriteTest {
 
     @Override
