@@ -45,7 +45,12 @@ recipeList:
       artifactId: shrinkwrap-resolver-depchain
       newVersion: latest.release
       overrideManagedVersion: true
-  # TODO: Haben wir alle Dependencies geupdated?
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.jboss.arquillian.protocol
+      oldArtifactId: arquillian-protocol-servlet
+      newGroupId: org.jboss.arquillian.protocol
+      newArtifactId: arquillian-protocol-servlet-jakarta
+      newVersion: latest.release
 
 ---
 type: specs.openrewrite.org/v1beta/recipe
