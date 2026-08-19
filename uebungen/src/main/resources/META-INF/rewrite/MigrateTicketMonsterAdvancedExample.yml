@@ -83,9 +83,9 @@ recipeList:
       newArtifactId: jakarta.servlet-api
       newVersion: latest.release
   - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: org.hibernate.javax.persistence
-      oldArtifactId: hibernate-jpa-2.1-api
-      newGroupId: jakarta.persistence
-      newArtifactId: jakarta.persistence-api
-      newVersion: 3.2.0
+      oldGroupId: org.jboss.spec.javax.annotation
+      oldArtifactId: jboss-annotations-api_1.2_spec
+      newGroupId: jakarta.annotation
+      newArtifactId: jakarta.annotation-api
+      newVersion: latest.release
   # TODO: Haben wir schon alle JBoss-Specs geupdated?
