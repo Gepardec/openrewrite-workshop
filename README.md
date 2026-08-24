@@ -35,7 +35,11 @@ mvn clean install
 
 ## Slides
 
-Die im Workshop genutzten Slides befinden sich unter "/slides.pdf"
+Die im Workshop genutzten Slides befinden sich jeweils im Root des Repos:
+- hibernate-problemsammlung.pdf: Sammlung bekannter Probleme, die beim Upgrade auf JBoss EAP-8 (Hibernate 6.x) auftreten
+- jboss-eap8-upgrade: Slides über das EAP-8 Upgrade allgemein, unser Vorgehen und Konzepte
+- openrewrite.pdf: Slides über die Einführung in das Tool OpenRewrite
+
 
 ## Weiterführende Ressourcen
 
